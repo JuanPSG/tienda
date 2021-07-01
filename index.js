@@ -49,7 +49,7 @@ app.get('/',(req,res) =>{
 
 //insertar datos
 app.get('/insertar', (req, res)=>{
-    res.redirect('/product');
+   res.render('product');
 });
 
 app.get('/products', (req, res)=>{
