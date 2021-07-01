@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     <script src="/static/js/bootstrap.min.js"></script>   
+    <title>Document</title>
+</head>
+<!--   The idea is to use a header to override the method. The following example 
+    is to override POST method to create PUT and DELETE method.    --> 
+    <!--<form action="/api/product/{{_id}}" method="PUT">-->
+    <form action="/api/product/{{products._id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    
+<div class="form-group">
+    <label for="_Id">ID</label>
+    <input type="text" class="form-control" disabled value="{{products._id}}" name="_Id">
+</div>
+
+     <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" class="form-control" value="{{products.name}}" name="name" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" class="form-control" value="{{products.price}}" placeholder="Introduce a price" name="price">
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" name="category">
+            <option selected>{{products.category}}</option>
+            <option value="computers">Computers</option>
+            <option value="phones">Phones</option>
+            <option value="accesories">Accesories</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" value="{{products.description}}" placeholder="Write a description" name="description">
+    </div>
+    <div class="form-group">
+        <label for="picture">Picture</label>
+        <input type="text" class="form-control" value="{{products.picture}}" placeholder="Url for your avatar" name="avatar">
+    </div>
+    <button class="btn btn-primary" type="submit">GUARDAR</button>
+    </form>
